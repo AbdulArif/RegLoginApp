@@ -28,11 +28,12 @@ namespace RegLoginApp.Views
             var data1 = (from regU in conn.Table<RegUserTable>() select regU.UserName).ToList();
             NamePicker.ItemsSource = data1;
 
-            //TaskPicker.Items.Add("T1");
-            //TaskPicker.Items.Add("T2");
-            //TaskPicker.Items.Add("T3");
+            //taskpicker.items.add("t1");
+            //taskpicker.items.add("t2");
+            //taskpicker.items.add("t3");
             var data2 = (from tsk in conn.Table<MyTask>() select tsk.MyTaskName).ToList();
             TaskPicker.ItemsSource = data2;
+            
 
         }
 
@@ -49,8 +50,8 @@ namespace RegLoginApp.Views
 
         private void Cancel_Clicked(object sender, EventArgs e)
         {
-            //var data = (from cnt in conn.Table<Counts>() select cnt);
-            //dataList.ItemsSource = data;
+            var data = (from cnt in conn.Table<Counts>() select cnt.Count);
+            dataList.ItemsSource = data;
         }
     }
 }
