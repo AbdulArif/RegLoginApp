@@ -17,17 +17,21 @@ namespace RegLoginApp
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+        private SQLiteConnection conn;
+        RegUserTable regUserTable;
         public MainPage()
         {
-            SetValue(NavigationPage.HasNavigationBarProperty, false);
+            //SetValue(NavigationPage.HasNavigationBarProperty, false);
             InitializeComponent();
+            conn = DependencyService.Get<ISQLite>().GetSQLiteConnection();
+            conn.CreateTable<RegUserTable>();
         }
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            var dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UserDatabase.db");
-            var db = new SQLiteConnection(dbpath);
-            db.CreateTable<RegUserTable>();
+            //var dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UserDatabase.db");
+            //var db = new SQLiteConnection(dbpath);
+            //db.CreateTable<RegUserTable>();
             var item = new RegUserTable()
             {
                 UserName = EntryUserName.Text,
@@ -35,7 +39,7 @@ namespace RegLoginApp
                 Email = EntryUserEmail.Text,
                 PhoneNumber = EntryUserPhoneNumber.Text
             };
-            db.Insert(item);
+            conn.Insert(item);
             Device.BeginInvokeOnMainThread(async () => {
                 var result = await this.DisplayAlert("Congrats", "User registration successfull", "Yes", "Cancel");
                 if (result)

@@ -30,13 +30,13 @@ namespace RegLoginApp.Views
         private void ShowButton_Clicked(object sender, EventArgs e)
         {
 
-            var data = (from tsk in conn.Table<MyTask>() select tsk);
+            var data = (from tsk in conn.Table<MyTask>() select tsk.MyTaskName).ToList();
             dataList.ItemsSource = data;
         }
 
         async void NextPage_Clicked(object sender, EventArgs e)
         {
-           await Navigation.PushAsync(new DataPage());
+           await Navigation.PushAsync(new EnterData());
         }
     }
 }

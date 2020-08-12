@@ -13,21 +13,20 @@ namespace RegLoginApp.Views
         private SQLiteConnection conn;
         Counts counts;
 
-        public object dataList { get; private set; }
+       // public object dataList { get; private set; }
 
         public EnterData()
         {
             InitializeComponent();
             conn = DependencyService.Get<ISQLite>().GetSQLiteConnection();
             conn.CreateTable<Counts>();
-            conn.CreateTable<RegUserTable>();
 
             //NamePicker.Items.Add("Arif");
             //NamePicker.Items.Add("Sofik");
             //NamePicker.Items.Add("Akkram");
 
             var data1 = (from regU in conn.Table<RegUserTable>() select regU.UserName).ToList();
-            TaskPicker.ItemsSource = data1;
+            NamePicker.ItemsSource = data1;
 
             //TaskPicker.Items.Add("T1");
             //TaskPicker.Items.Add("T2");
