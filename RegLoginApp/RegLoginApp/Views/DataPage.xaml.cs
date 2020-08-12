@@ -2,41 +2,38 @@
 using SQLite;
 using System;
 using System.Linq;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace RegLoginApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePage : ContentPage
+    public partial class DataPage : ContentPage
     {
         private SQLiteConnection conn;
-        MyTask myTask;
-        public HomePage()
+        Student student;
+        public DataPage()
         {
             InitializeComponent();
             conn = DependencyService.Get<ISQLite>().GetSQLiteConnection();
-            conn.CreateTable<MyTask>();
+            conn.CreateTable<Student>();
         }
 
         private void SaveButton_Clicked(object sender, EventArgs e)
         {
-            myTask = new MyTask();
-            myTask.MyTaskName = Name.Text;
-            conn.Insert(myTask);
+            student = new Student();
+            student.Name = Name.Text;
+            student.Address = Address.Text;
+            conn.Insert(student);
             Name.Text = "";
+            Address.Text = "";
         }
 
         private void ShowButton_Clicked(object sender, EventArgs e)
         {
-
-            var data = (from tsk in conn.Table<MyTask>() select tsk);
+            var data = (from stu in conn.Table<Student>() select stu);
             dataList.ItemsSource = data;
-        }
-
-        async void NextPage_Clicked(object sender, EventArgs e)
-        {
-           await Navigation.PushAsync(new DataPage());
         }
     }
 }

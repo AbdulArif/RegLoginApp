@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="RegLoginApp.Views.EnterData">
+    <ContentPage.Content>
+        <StackLayout  Orientation="Vertical" Spacing="30" VerticalOptions="Center" >
+            <Picker x:Name="NamePicker" Title="Select Name" TitleColor="SeaGreen">
+                <Picker.ItemDisplayBinding>
+                    <Binding Path="Name"/>
+                </Picker.ItemDisplayBinding>
+            </Picker>
+            <DatePicker x:Name="DatePicker" MinimumDate="01/01/1972" MaximumDate="12/31/2018"/>
+            <Picker x:Name="TaskPicker" Title="Select Task" TitleColor="SeaGreen"/>
+            <Entry x:Name="EntryCount" Placeholder="Count" Keyboard="Numeric"/>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button x:Name="Save" Text="Save" Clicked="Save_Clicked" BackgroundColor="Black" TextColor="White"/>
+                <Button x:Name="Cancel" Text="Cancel" Clicked="Cancel_Clicked" BackgroundColor="Black" TextColor="White"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

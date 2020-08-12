@@ -1,11 +1,7 @@
 ﻿using RegLoginApp.Tables;
 using SQLite;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -26,7 +22,7 @@ namespace RegLoginApp.Views
             var dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UserDatabase.db");
             var db = new SQLiteConnection(dbpath);
             var myquery = db.Table<RegUserTable>().Where(u => u.UserName.Equals(EntryName.Text) && u.Password.Equals(Entrypassword.Text)).FirstOrDefault();
-            if(myquery !=null)
+            if (myquery != null)
             {
                 App.Current.MainPage = new NavigationPage(new HomePage());
             }
@@ -46,6 +42,6 @@ namespace RegLoginApp.Views
         {
             await Navigation.PushAsync(new MainPage());
         }
-        
+
     }
 }

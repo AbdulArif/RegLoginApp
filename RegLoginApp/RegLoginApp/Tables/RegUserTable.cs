@@ -11,5 +11,10 @@ namespace RegLoginApp.Tables
         public string Password { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
+
+        internal static object GetAllUser()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

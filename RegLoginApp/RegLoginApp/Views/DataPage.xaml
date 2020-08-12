@@ -4,19 +4,19 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="RegLoginApp.Views.HomePage">
+             x:Class="RegLoginApp.Views.DataPage">
     <ContentPage.Content>
         <StackLayout>
-            <Entry x:Name="Name" Placeholder="Enter Task Name"/>
+            <Entry x:Name="Name" Placeholder="Name"/>
+            <Entry x:Name="Address" Placeholder="Address"/>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                <Button x:Name="SaveButton" Text="Save" Clicked="SaveButton_Clicked"/>
-                <Button x:Name="ShowButton" Text="Show Data" Clicked="ShowButton_Clicked"/>
-                <Button x:Name="NextPage" Text="Go to next page" Clicked="NextPage_Clicked"/>
+            <Button x:Name="SaveButton" Text="Save" Clicked="SaveButton_Clicked"/>
+            <Button x:Name="ShowButton" Text="Show Data" Clicked="ShowButton_Clicked"/>
             </StackLayout>
             <ListView x:Name="dataList">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding Name}" Detail="{Binding Name}"/>
+                        <TextCell Text="{Binding Name}" Detail="{Binding Address}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
