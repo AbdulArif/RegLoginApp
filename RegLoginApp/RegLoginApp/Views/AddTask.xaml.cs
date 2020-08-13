@@ -22,9 +22,18 @@ namespace RegLoginApp.Views
         private void SaveButton_Clicked(object sender, EventArgs e)
         {
             myTask = new MyTask();
-            myTask.MyTaskName = Name.Text;
-            conn.Insert(myTask);
-            Name.Text = "";
+            var a= Name.Text;
+            if (!string.IsNullOrWhiteSpace(Name.Text) && a.Length < 2)
+            {
+                myTask.MyTaskName = Name.Text;
+                conn.Insert(myTask);
+                Name.Text = "";
+            }
+            else
+            {
+                DisplayAlert("Alert", "Task sould not be empty or Please insert less than 2 digit", "OK");
+            }
+            
         }
 
         private void ShowButton_Clicked(object sender, EventArgs e)
@@ -38,5 +47,7 @@ namespace RegLoginApp.Views
         {
            await Navigation.PushAsync(new EnterData());
         }
+
+
     }
 }

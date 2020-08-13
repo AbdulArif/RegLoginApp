@@ -1,6 +1,5 @@
-﻿using RegLoginApp.Views;
-using Xamarin.Forms;
-
+﻿using Xamarin.Forms;
+using RegLoginApp.Views;
 namespace RegLoginApp
 {
     public partial class App : Application
@@ -8,7 +7,7 @@ namespace RegLoginApp
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new EnterData());
+            MainPage = new NavigationPage(new LoginPage());
 
             //MainPage = new MainPage();
         }
