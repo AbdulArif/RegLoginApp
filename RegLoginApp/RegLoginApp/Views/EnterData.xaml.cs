@@ -13,8 +13,6 @@ namespace RegLoginApp.Views
         private SQLiteConnection conn;
         Counts counts;
 
-       // public object dataList { get; private set; }
-
         public EnterData()
         {
             InitializeComponent();
@@ -44,14 +42,16 @@ namespace RegLoginApp.Views
             counts.Date = DatePicker.Date.ToString();
             counts.TaskName = TaskPicker.SelectedItem.ToString();
             counts.Count= int.Parse(EntryCount.Text);
-           // EntryCount.text = "";
+
+            conn.Insert(counts);
+            DisplayAlert("Alert", "Data submited succesful", "OK");
+            // EntryCount.text = "";
 
         }
 
-        private void Cancel_Clicked(object sender, EventArgs e)
+        async void Report_Clicked(object sender, EventArgs e)
         {
-            var data = (from cnt in conn.Table<Counts>() select cnt.Count);
-            dataList.ItemsSource = data;
+            await Navigation.PushAsync(new SummaryReport());
         }
     }
 }

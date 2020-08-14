@@ -7,7 +7,7 @@
              x:Class="RegLoginApp.Views.HomePage">
     <ContentPage.Content>
         <StackLayout>
-            <Entry x:Name="Name" Placeholder="Enter Task Name"/>
+            <Entry x:Name="Name" Placeholder="Enter Task Name" MaxLength="5"/>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 <Button x:Name="SaveButton" Text="Save" Clicked="SaveButton_Clicked"/>
                 <Button x:Name="ShowButton" Text="Show Data" Clicked="ShowButton_Clicked"/>
@@ -16,7 +16,7 @@
             <ListView x:Name="dataList">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding Name}" Detail="{Binding Name}"/>
+                        <TextCell Text="{Binding MyTaskName}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

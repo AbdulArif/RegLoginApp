@@ -18,15 +18,8 @@
 
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 <Button x:Name="Save" Text="Save" Clicked="Save_Clicked" BackgroundColor="Black" TextColor="White"/>
-                <Button x:Name="Cancel" Text="Cancel" Clicked="Cancel_Clicked" BackgroundColor="Black" TextColor="White"/>
+                <Button x:Name="Report" Text="Report1" Clicked="Report_Clicked" BackgroundColor="Black" TextColor="White"/>
             </StackLayout>
-            <ListView x:Name="dataList">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <TextCell Text="{Binding Name}"/>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

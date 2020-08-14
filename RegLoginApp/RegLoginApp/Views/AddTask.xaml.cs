@@ -23,15 +23,21 @@ namespace RegLoginApp.Views
         {
             myTask = new MyTask();
             var a= Name.Text;
-            if (!string.IsNullOrWhiteSpace(Name.Text) && a.Length < 2)
+            if (!string.IsNullOrWhiteSpace(Name.Text) && a.Length < 6)
             {
+               // SaveButton.IsEnabled = true;
+                //setButtonVisibility(); 
                 myTask.MyTaskName = Name.Text;
                 conn.Insert(myTask);
                 Name.Text = "";
+
+                var msg = "Successfully" + a + " save";
+                DisplayAlert("Alert", msg, "OK");
             }
             else
             {
-                DisplayAlert("Alert", "Task sould not be empty or Please insert less than 2 digit", "OK");
+                //SaveButton.IsEnabled = false;
+                DisplayAlert("Alert", "Please insert task name less than 6 digit", "OK");
             }
             
         }
@@ -45,9 +51,23 @@ namespace RegLoginApp.Views
 
         async void NextPage_Clicked(object sender, EventArgs e)
         {
-           await Navigation.PushAsync(new EnterData());
+            await Navigation.PushAsync(new EnterData());
+            //setButtonVisibility();
         }
-
+        // disable Button
+        //private void setButtonVisibility()
+        //{
+        //    if ((Name.Text != String.Empty))
+        //    {
+        //        SaveButton.IsEnabled = true;
+                
+        //    }
+        //    else
+        //    {
+        //        SaveButton.IsEnabled = false;
+               
+        //    }
+        //}
 
     }
 }

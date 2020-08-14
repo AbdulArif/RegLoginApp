@@ -10,7 +10,7 @@ namespace RegLoginApp.Droid
     {
         public SQLiteConnection GetSQLiteConnection()
         {
-            var dbName = "UserDb.sqlite";
+            var dbName = "User.sqlite";
             var dbPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData);
 
             var path = Path.Combine(dbPath,dbName);
