@@ -1,5 +1,8 @@
 ﻿using RegLoginApp.Tables;
 using SQLite;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 using Xamarin.Forms;
@@ -11,19 +14,20 @@ namespace RegLoginApp.Views
     public partial class SummaryReport : ContentPage
     {
         private SQLiteConnection conn;
-        //Student student;
+        Student student;
         Counts counts;
+       // public IList<Counts> datagrids { get; set; }
         public SummaryReport()
         {
             InitializeComponent();
 
             conn = DependencyService.Get<ISQLite>().GetSQLiteConnection();
             //conn.CreateTable<Student>();
-            //var data = (from stu in conn.Table<Student>() select stu);
-
-            //conn.CreateTable<Counts>();
+            var data1 = (from stu in conn.Table<Student>() select stu);
             var data = (from cou in conn.Table<Counts>() select cou);
-            dataList.ItemsSource = data;
+
+            //dataList.ItemsSource = data;
+           
         }
     }
 }

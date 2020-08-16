@@ -6,31 +6,75 @@
              mc:Ignorable="d"
              x:Class="RegLoginApp.Views.SummaryReport">
     <ContentPage.Content>
-        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-            <ListView x:Name="dataList" VerticalOptions="Center" HorizontalOptions="Center">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <TextCell Text="{Binding Name}" Detail="{Binding TaskName}"/>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-            <!--<ListView x:Name="dataList">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.View>
-                                <StackLayout>
-                                    <Label x:Name="a" Text="{Binding Name}" TextColor="Red" />
-                                    <Label x:Name="b" Text="{Binding Count}" TextColor="Green" />
-                                    <Label x:Name="c"  Text="{Binding TaskName}" TextColor="Blue" />
-                                </StackLayout>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>-->
+        <StackLayout>
             
+              <Frame BackgroundColor="Salmon">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2.5*"></ColumnDefinition>
+                        <ColumnDefinition Width="2.5*"></ColumnDefinition>
+                        <ColumnDefinition Width="2.5*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0">NAME</Label>
+                    <Label Grid.Row="0" Grid.Column="1">TASKNAME</Label>
+                    <Label Grid.Row="0" Grid.Column="2">COUNT</Label>
+                    
+                </Grid>
+              </Frame>
+
+            <ListView ItemsSource="{Binding datagrids}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame>
+                                    <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2.5*"></ColumnDefinition>
+                                        <ColumnDefinition Width="2.5*"></ColumnDefinition>
+                                        <ColumnDefinition Width="2.5*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}"></Label>
+                                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding TaskName}"></Label>
+                                    <Label Grid.Row="0" Grid.Column="2" Text="{Binding Count}"></Label>
+                                    </Grid>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>      
+
+                <!--<ListView x:Name="dataList" VerticalOptions="Center" HorizontalOptions="Center">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextCell Text="{Binding Name}" Detail="{Binding TaskName}"/>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>-->
+
+                    <!--<ListView x:Name="dataList">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <StackLayout>
+                                            <Label x:Name="a" Text="{Binding Name}" TextColor="Red" />
+                                            <Label x:Name="b" Text="{Binding Count}" TextColor="Green" />
+                                            <Label x:Name="c"  Text="{Binding TaskName}" TextColor="Blue" />
+                                        </StackLayout>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>-->  
+         
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

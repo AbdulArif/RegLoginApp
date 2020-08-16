@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="RegLoginApp.Views.Report">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="Salmon">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2.5*"></ColumnDefinition>
+                        <ColumnDefinition Width="2.5*"></ColumnDefinition>
+                        <ColumnDefinition Width="2.5*"></ColumnDefinition>
+                        <ColumnDefinition Width="2.5*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0">PNAME</Label>
+                    <Label Grid.Row="0" Grid.Column="1">CHARGES</Label>
+                    <Label Grid.Row="0" Grid.Column="2">TOTALDAYS</Label>
+                    <Label Grid.Row="0" Grid.Column="3">DIWEEK</Label>
+                </Grid>
+            </Frame>
+            <ListView ItemsSource="{Binding cards}">
+            <!--<ListView x:Name="datalist">-->
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame BackgroundColor="DarkOrange">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2.5*"></ColumnDefinition>
+                                        <ColumnDefinition Width="2.5*"></ColumnDefinition>
+                                        <ColumnDefinition Width="2.5*"></ColumnDefinition>
+                                        <ColumnDefinition Width="2.5*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Grid.Row="0" Grid.Column="0" Text="{Binding PlanName}" TextColor="Black"></Label>
+                                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding Charges}" TextColor="Black"></Label>
+                                    <Label Grid.Row="0" Grid.Column="2" Text="{Binding TotalDays}" TextColor="Black"></Label>
+                                    <Label Grid.Row="0" Grid.Column="3" Text="{Binding DaysInWeek}" TextColor="Black"></Label>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

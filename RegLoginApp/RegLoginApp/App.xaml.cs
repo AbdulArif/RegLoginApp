@@ -7,7 +7,7 @@ namespace RegLoginApp
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new EnterData());
+            MainPage = new NavigationPage(new Report());
 
             //MainPage = new MainPage();
         }
