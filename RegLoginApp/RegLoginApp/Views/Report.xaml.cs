@@ -33,10 +33,10 @@ namespace RegLoginApp.Views
             conn = DependencyService.Get<ISQLite>().GetSQLiteConnection();
             var countdata = (from cou in conn.Table<Counts>() select cou);
 
-            //var countdata = (from cou in conn.Table<Counts>() select cou);
+            var countTemp = (from cou in conn.Table<Counts>() select cou.Count);
+            
+            
             YourList.ItemsSource = countdata;
-
-
 
         }
 

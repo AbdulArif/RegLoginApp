@@ -25,10 +25,10 @@
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
 
-                    <Label Grid.Row="0" Grid.Column="0">PNAME</Label>
-                    <Label Grid.Row="0" Grid.Column="1">CHARGES</Label>
-                    <Label Grid.Row="0" Grid.Column="2">TOTALDAYS</Label>
-                    <Label Grid.Row="0" Grid.Column="3">DIWEEK</Label>
+                    <Label Grid.Row="0" Grid.Column="0">NAME</Label>
+                    <Label Grid.Row="0" Grid.Column="1">DATE</Label>
+                    <Label Grid.Row="0" Grid.Column="2">TASKNAME</Label>
+                    <Label Grid.Row="0" Grid.Column="3">COUNT</Label>
                 </Grid>
             </Frame>
 
