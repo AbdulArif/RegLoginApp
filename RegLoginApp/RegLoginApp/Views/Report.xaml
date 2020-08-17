@@ -1,23 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             x:Class="RegLoginApp.Views.Report">
+
+    <!--  xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="RegLoginApp.Views.Report">
+    -->
+
     <ContentPage.Content>
+
         <StackLayout>
+
             <Frame BackgroundColor="Salmon">
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
                     </Grid.RowDefinitions>
 
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="2.5*"></ColumnDefinition>
-                        <ColumnDefinition Width="2.5*"></ColumnDefinition>
-                        <ColumnDefinition Width="2.5*"></ColumnDefinition>
-                        <ColumnDefinition Width="2.5*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
 
                     <Label Grid.Row="0" Grid.Column="0">PNAME</Label>
@@ -26,34 +31,55 @@
                     <Label Grid.Row="0" Grid.Column="3">DIWEEK</Label>
                 </Grid>
             </Frame>
-            <ListView ItemsSource="{Binding cards}">
-            <!--<ListView x:Name="datalist">-->
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Frame BackgroundColor="DarkOrange">
+
+            <Frame BackgroundColor="Beige">
+
+                  <!--<ListView ItemsSource="{Binding Cards}">--> 
+                <!--  <ListView x:Name="datalist"> -->
+
+                <ListView x:Name="YourList">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+
                                 <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="*"></RowDefinition>
-                                    </Grid.RowDefinitions>
+                                     <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>  
 
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="2.5*"></ColumnDefinition>
-                                        <ColumnDefinition Width="2.5*"></ColumnDefinition>
-                                        <ColumnDefinition Width="2.5*"></ColumnDefinition>
-                                        <ColumnDefinition Width="2.5*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
                                     </Grid.ColumnDefinitions>
 
-                                    <Label Grid.Row="0" Grid.Column="0" Text="{Binding PlanName}" TextColor="Black"></Label>
-                                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding Charges}" TextColor="Black"></Label>
-                                    <Label Grid.Row="0" Grid.Column="2" Text="{Binding TotalDays}" TextColor="Black"></Label>
-                                    <Label Grid.Row="0" Grid.Column="3" Text="{Binding DaysInWeek}" TextColor="Black"></Label>
+                                    <!-- <BoxView Grid.Column="1" Color="Bisque" />
+                                        <BoxView Grid.Column="2" Color="Blue" />
+                                        <BoxView Grid.Column="3" Color="Green" />
+                                        <Label Grid.Column="3" Text="Hello" TextColor="White" />  -->
+
+                                    
+                                        <!--<Label  Grid.Column="0" Text="{Binding PlanName}" TextColor="Red" FontSize="10" FontAttributes="Bold"></Label>
+                                        <Label  Grid.Column="1" Text="{Binding Charges}" TextColor="Black"></Label>
+                                        <Label  Grid.Column="2" Text="{Binding TotalDays}" TextColor="Black"></Label>
+                                        <Label  Grid.Column="3" Text="{Binding DaysInWeek}" TextColor="Black"></Label>-->
+                                    
+
+                                    <Label  Grid.Column="0" Text="{Binding Name}" TextColor="Black" FontSize="17"></Label>
+                                    <Label  Grid.Column="1" Text="{Binding Date}" TextColor="Black" FontSize="17"></Label>
+                                    <Label  Grid.Column="2" Text="{Binding TaskName}" TextColor="Black" FontSize="17"></Label>
+                                    <Label  Grid.Column="3" Text="{Binding Count}" TextColor="Black" FontSize="17"></Label>
+
                                 </Grid>
-                            </Frame>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </Frame>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

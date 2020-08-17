@@ -51,7 +51,7 @@ namespace RegLoginApp.Views
 
         async void Report_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new SummaryReport());
+            await Navigation.PushAsync(new Report());
         }
     }
 }
