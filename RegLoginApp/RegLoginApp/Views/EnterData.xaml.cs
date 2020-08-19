@@ -23,14 +23,14 @@ namespace RegLoginApp.Views
             //NamePicker.Items.Add("Sofik");
             //NamePicker.Items.Add("Akkram");
 
-            var data1 = (from regU in conn.Table<RegUserTable>() select regU.UserName).ToList();
-            NamePicker.ItemsSource = data1;
+            var userName = (from regU in conn.Table<RegUserTable>() select regU.UserName).ToList();
+            NamePicker.ItemsSource = userName;
 
             //taskpicker.items.add("t1");
             //taskpicker.items.add("t2");
             //taskpicker.items.add("t3");
-            var data2 = (from tsk in conn.Table<MyTask>() select tsk.MyTaskName).ToList();
-            TaskPicker.ItemsSource = data2;
+            var taskName = (from tsk in conn.Table<MyTask>() select tsk.MyTaskName).ToList();
+            TaskPicker.ItemsSource = taskName;
             
 
         }
