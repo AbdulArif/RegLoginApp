@@ -29,22 +29,31 @@ namespace RegLoginApp
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            //var dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UserDatabase.db");
-            //var db = new SQLiteConnection(dbpath);
-            //db.CreateTable<RegUserTable>();
-            var item = new RegUserTable()
+            var userName = EntryUserName.Text;
+            var password = EntryUserPassword.Text;
+            var email = EntryUserEmail.Text;
+            var PhNo = EntryUserPhoneNumber.Text;
+if (!string.IsNullOrWhiteSpace(userName) && userName.Length < 16 && !string.IsNullOrWhiteSpace(password) && !string.IsNullOrWhiteSpace(email) && !string.IsNullOrWhiteSpace(PhNo) && PhNo.Length < 11) 
             {
-                UserName = EntryUserName.Text,
-                Password = EntryUserPassword.Text,
-                Email = EntryUserEmail.Text,
-                PhoneNumber = EntryUserPhoneNumber.Text
-            };
-            conn.Insert(item);
-            Device.BeginInvokeOnMainThread(async () => {
-                var result = await this.DisplayAlert("Congrats", "User registration successfull", "Yes", "Cancel");
-                if (result)
-                    await Navigation.PushAsync(new LoginPage());
-            });
+                regUserTable = new RegUserTable()
+                {
+                    UserName = EntryUserName.Text,
+                    Password = EntryUserPassword.Text,
+                    Email = EntryUserEmail.Text,
+                    PhoneNumber = EntryUserPhoneNumber.Text
+                };
+                conn.Insert(regUserTable);
+                Device.BeginInvokeOnMainThread(async () => {
+                    var result = await this.DisplayAlert("Congrats", "User registration successfull", "Yes", "Cancel");
+                    if (result)
+                        await Navigation.PushAsync(new LoginPage());
+                });
+            }
+            else
+            {
+                DisplayAlert("Alert", "Please insert USER NAME less than 16 digit", "OK");
+            }
+
         }
     }
 }

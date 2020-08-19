@@ -32,7 +32,7 @@
                     </StackLayout>
                     <StackLayout Grid.Row="3">
                         <Entry Placeholder="Phone Number" FontSize="16" Keyboard="Telephone"
-                               x:Name="EntryUserPhoneNumber"/>
+                               x:Name="EntryUserPhoneNumber" MaxLength="10"/>
                     </StackLayout>
 
                     <StackLayout Grid.Row="4">

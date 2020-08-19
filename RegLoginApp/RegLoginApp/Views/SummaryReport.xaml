@@ -7,7 +7,10 @@
              x:Class="RegLoginApp.Views.SummaryReport">
     <ContentPage.Content>
         <StackLayout>
-            <Picker x:Name="NamePicker" Title="Select Name" TitleColor="SeaGreen"/>
+            <Picker x:Name="NamePicker" Title="Select Name" 
+                    TitleColor="DarkBlue" 
+                    SelectedIndexChanged="Picker_OnSelectedIndexChanged"></Picker>
+
             <Frame BackgroundColor="Salmon">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -18,12 +21,11 @@
                         <ColumnDefinition Width="*"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
-                        <!--<ColumnDefinition Width="*"></ColumnDefinition>-->
                     </Grid.ColumnDefinitions>
 
-                    <Label Grid.Row="0" Grid.Column="0">User</Label>
-                    <Label Grid.Row="0" Grid.Column="1">TaskName</Label>
-                    <Label Grid.Row="0" Grid.Column="2">Count</Label>
+                    <Label Grid.Row="0" Grid.Column="0" FontAttributes="Bold" FontSize="20">Name</Label>
+                    <Label Grid.Row="0" Grid.Column="1" FontAttributes="Bold" FontSize="20">Task Name</Label>
+                    <Label Grid.Row="0" Grid.Column="2" FontAttributes="Bold" FontSize="20">Count</Label>
                 </Grid>
             </Frame>
 
@@ -32,43 +34,21 @@
                 <!--  <ListView ItemsSource="{Binding Cards}"> -->
                 <!--  <ListView x:Name="datalist"> -->
 
-                <ListView x:Name="ListCountData">
+                <ListView x:Name="ListCountSumData">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
 
                                 <Grid>
-                                    <!-- <Grid.RowDefinitions>
-                                        <RowDefinition Height="*"></RowDefinition>
-                                    </Grid.RowDefinitions>  -->
-
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"></ColumnDefinition>
                                         <ColumnDefinition Width="*"></ColumnDefinition>
                                         <ColumnDefinition Width="*"></ColumnDefinition>
-                                        <!--<ColumnDefinition Width="*"></ColumnDefinition>-->
                                     </Grid.ColumnDefinitions>
 
-                                    <!-- <BoxView Grid.Column="1" Color="Bisque" />
-                                        <BoxView Grid.Column="2" Color="Blue" />
-                                        <BoxView Grid.Column="3" Color="Green" />
-                                        <Label Grid.Column="3" Text="Hello" TextColor="White" />  -->
-
-                                    <!--
-                                        <Label  Grid.Column="0" Text="{Binding PlanName}" TextColor="Red" FontSize="10" FontAttributes="Bold"></Label>
-                                        <Label  Grid.Column="1" Text="{Binding Charges}" TextColor="Black"></Label>
-                                        <Label  Grid.Column="2" Text="{Binding TotalDays}" TextColor="Black"></Label>
-                                        <Label  Grid.Column="3" Text="{Binding DaysInWeek}" TextColor="Black"></Label>
-                                    -->
-
-                                    <Label  Grid.Column="0" Text="{Binding Name}" TextColor="Red" FontSize="20" FontAttributes="Bold"></Label>
-
-                                    <!--Label  Grid.Column="1" Text="{Binding realDate}" TextColor="Black"></Label> Use this when realDate is string-->
-
-                                    <Label  Grid.Column="1" Text="{Binding realDate, StringFormat='{0:MMMM dd, yyyy}'}" TextColor="Black"></Label>
-
-                                    <Label  Grid.Column="2" Text="{Binding TaskName}" TextColor="Black"></Label>
-                                    <Label  Grid.Column="3" Text="{Binding Count}" TextColor="Black"></Label>
+                                    <Label  Grid.Column="0" Text="{Binding aName}" TextColor="Red" FontSize="20" ></Label>
+                                    <Label  Grid.Column="1" Text="{Binding aTaskName}" TextColor="Black"></Label>
+                                    <Label  Grid.Column="2" Text="{Binding aCount}" TextColor="Black"></Label>
 
                                 </Grid>
 

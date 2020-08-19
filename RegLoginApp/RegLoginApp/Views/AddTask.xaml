@@ -11,7 +11,7 @@
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 <Button x:Name="SaveButton" Text="Save" Clicked="SaveButton_Clicked"/>
                 <Button x:Name="ShowButton" Text="Show Data" Clicked="ShowButton_Clicked"/>
-                <Button x:Name="NextPage" Text="Go to next page" Clicked="NextPage_Clicked"/>
+                <!--<Button x:Name="NextPage" Text="Go to next page" Clicked="NextPage_Clicked"/>-->
             </StackLayout>
             <ListView x:Name="dataList">
                 <ListView.ItemTemplate>

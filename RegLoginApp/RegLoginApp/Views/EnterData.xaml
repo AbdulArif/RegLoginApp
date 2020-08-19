@@ -12,13 +12,13 @@
                     <Binding Path="Name"/>
                 </Picker.ItemDisplayBinding>-->
             </Picker>
-            <DatePicker x:Name="DatePicker" MinimumDate="01/01/1972" MaximumDate="12/31/2018"/>
+            <DatePicker x:Name="DatePicker" MinimumDate="01/01/1972" MaximumDate="08/19/2020"/>
             <Picker x:Name="TaskPicker" Title="Select Task" TitleColor="SeaGreen"/>
             <Entry x:Name="EntryCount" Placeholder="Count" Keyboard="Numeric"/>
 
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                 <Button x:Name="Save" Text="Save" Clicked="Save_Clicked" BackgroundColor="Black" TextColor="White"/>
-                <Button x:Name="Report" Text="Report1" Clicked="Report_Clicked" BackgroundColor="Black" TextColor="White"/>
+                <!--<Button x:Name="Report" Text="Report" Clicked="Report_Clicked" BackgroundColor="Black" TextColor="White"/>-->
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

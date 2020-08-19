@@ -25,8 +25,7 @@ namespace RegLoginApp.Views
             var a= Name.Text;
             if (!string.IsNullOrWhiteSpace(Name.Text) && a.Length < 6)
             {
-               // SaveButton.IsEnabled = true;
-                //setButtonVisibility(); 
+              
                 myTask.MyTaskName = Name.Text;
                 conn.Insert(myTask);
                 Name.Text = "";
@@ -45,15 +44,15 @@ namespace RegLoginApp.Views
         private void ShowButton_Clicked(object sender, EventArgs e)
         {
 
-            var data = (from tsk in conn.Table<MyTask>() select tsk.MyTaskName).ToList();
+            var data = (from tsk in conn.Table<MyTask>() select tsk.MyTaskName);
             dataList.ItemsSource = data;
         }
 
-        async void NextPage_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new EnterData());
-            //setButtonVisibility();
-        }
+        //async void NextPage_Clicked(object sender, EventArgs e)
+        //{
+        //    await Navigation.PushAsync(new EnterData());
+        //    //setButtonVisibility();
+        //}
         // disable Button
         //private void setButtonVisibility()
         //{

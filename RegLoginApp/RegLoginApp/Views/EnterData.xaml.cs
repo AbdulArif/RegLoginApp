@@ -38,20 +38,27 @@ namespace RegLoginApp.Views
         private void Save_Clicked(object sender, EventArgs e)
         {
             counts = new Counts();
-            counts.Name = NamePicker.SelectedItem.ToString();
-            counts.Date = DatePicker.Date.ToString();
-            counts.TaskName = TaskPicker.SelectedItem.ToString();
-            counts.Count= int.Parse(EntryCount.Text);
+            var a = EntryCount.Text;
+            if (!string.IsNullOrWhiteSpace(a) && a.Length < 6)
+            { 
+                counts.Name = NamePicker.SelectedItem.ToString();
+                counts.Date = DatePicker.Date.ToString();
+                counts.TaskName = TaskPicker.SelectedItem.ToString();
+                counts.Count= int.Parse(a);
 
-            conn.Insert(counts);
-            DisplayAlert("Alert", "Data submited succesful", "OK");
-            // EntryCount.text = "";
-
+                conn.Insert(counts);
+                EntryCount.Text = "";
+                DisplayAlert("Alert", "Data submited succesful", "OK");
+            }
+            else
+            {
+                DisplayAlert("Alert", "Please insert Count less than 6 digit", "OK");
+            }
         }
 
-        async void Report_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new Report());
-        }
+        //async void Report_Clicked(object sender, EventArgs e)
+        //{
+        //    await Navigation.PushAsync(new Report());
+        //}
     }
 }
