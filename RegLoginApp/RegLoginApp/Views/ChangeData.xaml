@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="RegLoginApp.Views.ChangeData"
+             Title="Manage Data">
+    
+    <NavigationPage.TitleView>
+        <Label Text="Manage Your Data" TextColor="White" FontSize="25"   HorizontalTextAlignment="Center"/>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+        <StackLayout  Orientation="Vertical" Spacing="20" VerticalOptions="Start" >
+
+            <AbsoluteLayout Margin="20">
+                <Label Text="Change Data" TextColor="Red" HorizontalOptions="Center" FontSize="Title" TextDecorations="Underline" AbsoluteLayout.LayoutBounds="100,25"></Label>
+            </AbsoluteLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button x:Name="TaskData" Text="Edit Tasks" Clicked="ChangeTask_Clicked" BackgroundColor="Black" TextColor="White"/>
+                <Button x:Name="CountData" Text="Edit Counts" Clicked="ChangeCount_Clicked" BackgroundColor="Black" TextColor="White"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

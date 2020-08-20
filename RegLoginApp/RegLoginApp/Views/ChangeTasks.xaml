@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="RegLoginApp.Views.ChangeTasks"
+             Title="Manage Tasks">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="backItem" 
+                     Text="Back" 
+                     Clicked="GoBack" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Task Name" TextColor="Black" HorizontalOptions="Center" Margin="20"  TextDecorations="Underline" FontSize="20"></Label>
+            <ListView x:Name="taskList">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding MyTaskName}" Detail ="Tap me to Edit" Tapped="OnTapDoThis"/>
+                        <!--Appearing="OnTapDoThis"/>-->
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+            <!-- following is implemented from https://www.c-sharpcorner.com/article/table-view-in-xamarin-forms/ -->
+            <TableView>
+                <TableRoot>
+                    <TableSection  Title="Basic Information">
+                        <TextCell Text="Name" Detail="Umair Hassan" Tapped="OnTapDoThis" ></TextCell>
+                        <TextCell Text="Address" x:Name="address"></TextCell>
+                        <!-- this is how you bind a TextCell via x:Name -->
+
+                        <EntryCell Label="Title" Placeholder="(e.g. Shopping)" Completed="UpdateDB_1" Tapped="OnTapDoThis"></EntryCell>
+                        <EntryCell Label="Title" x:Name="testPlaceholder" Completed="UpdateDB_2"></EntryCell>
+                        <!-- this is how you bind a TextCell via x:Name -->
+
+                        <SwitchCell Text="Notifications" On="True"></SwitchCell>
+                    </TableSection>
+                    <TableSection Title="Settings">
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="13,0">
+                                <Label Text="Date" VerticalOptions="Center"></Label>
+                                <DatePicker Format="dd MMM yyyy" Date="25 Jan 2016" HorizontalOptions="EndAndExpand"></DatePicker>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

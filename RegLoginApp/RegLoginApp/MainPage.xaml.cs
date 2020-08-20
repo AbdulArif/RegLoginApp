@@ -30,11 +30,7 @@ namespace RegLoginApp
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            //var emailPattern =
-            //    "^(?(")(".+?(?<!\\)"@)| (([0 - 9a - z]((\.(? !\.)) |[-!#\$%&'\
-            //    *\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))(?(\[)(\[(\d
-            //    {1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-
-            //        z0-9][\-a-z0-9]{0,22}[a-z0-9]))$";
+            //var emailPattern ="Regular_expression";
             var userName = EntryUserName.Text;
             var password = EntryUserPassword.Text;
             var email = EntryUserEmail.Text;
