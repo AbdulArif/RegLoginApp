@@ -30,13 +30,13 @@ namespace RegLoginApp.Views
                 conn.Insert(myTask);
                 Name.Text = "";
 
-                var msg = "Successfully" + a + " save";
-                DisplayAlert("Alert", msg, "OK");
+                var msg = "Successfully " + a + " saved.";
+                DisplayAlert("Success", msg, "OK");
             }
             else
             {
                 //SaveButton.IsEnabled = false;
-                DisplayAlert("Alert", "Please insert task name less than 6 digit", "OK");
+                DisplayAlert("Alert", "Please add task name less than 6 characters", "OK");
             }
             
         }

@@ -32,7 +32,7 @@ namespace RegLoginApp.Views
             }
             else
             {
-                var result = await this.DisplayAlert("Error", "User Name or Password incorrect", "Yes", "Cancel");
+                var result = await this.DisplayAlert("Alert", "User Name or Password incorrect! Please change.", "Yes", "Cancel");
                 if (result)
                     await Navigation.PushAsync(new LoginPage());
                 else

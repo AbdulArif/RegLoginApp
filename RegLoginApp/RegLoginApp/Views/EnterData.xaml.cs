@@ -48,7 +48,8 @@ namespace RegLoginApp.Views
 
                 conn.Insert(counts);
                 EntryCount.Text = "";
-                DisplayAlert("Alert", "Data submited succesful", "OK");
+                DisplayAlert("Success", "Data submitted successfully!", "OK");
+
             }
             else
             {
