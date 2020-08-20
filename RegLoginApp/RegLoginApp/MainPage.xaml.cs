@@ -50,14 +50,14 @@ if (!string.IsNullOrWhiteSpace(userName) && userName.Length < 16 && !string.IsNu
                 };
                 conn.Insert(regUserTable);
                 Device.BeginInvokeOnMainThread(async () => {
-                    var result = await this.DisplayAlert("Congrats", "User registration successfull", "Yes", "Cancel");
+                    var result = await this.DisplayAlert("Congrats", "User registration successful.", "Yes", "Cancel");
                     if (result)
                         await Navigation.PushAsync(new LoginPage());
                 });
             }
             else
             {
-                DisplayAlert("Alert", "Please insert USER NAME less than 16 digit", "OK");
+                DisplayAlert("Alert", "Fields should not be blank. User should be less than 16 chars.", "OK");
             }
 
         }

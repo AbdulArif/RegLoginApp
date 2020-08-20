@@ -38,7 +38,9 @@ namespace RegLoginApp.Views
             var page4 = new MasterPageItems() { Title = "Change Tasks", Icon = "ic_action_dvr.png", TargetType = typeof(ChangeTasks) };
             var page5 = new MasterPageItems() { Title = "Change Counts", Icon = "ic_action_dvr.png", TargetType = typeof(ChangeCounts) };
             var page6 = new MasterPageItems() { Title = "Change Data", Icon = "ic_action_dvr.png", TargetType = typeof(ChangeData) };
-
+            var page7 = new MasterPageItems() { Title = "Student", Icon = "ic_action_dvr.png", TargetType = typeof(DataPage) };
+            var page8 = new MasterPageItems() { Title = "Login", Icon = "ic_action_dvr.png", TargetType = typeof(LoginPage) };
+            var page9 = new MasterPageItems() { Title = "Add Task", Icon = "ic_action_dvr.png", TargetType = typeof(AddTask) };
             // Adding menu items to menuList
             menuList.Add(page1);
             menuList.Add(page2);
@@ -46,8 +48,9 @@ namespace RegLoginApp.Views
             menuList.Add(page4);
             menuList.Add(page5);
             menuList.Add(page6);
-
-
+            menuList.Add(page7);
+            menuList.Add(page8);
+            menuList.Add(page9);
             // Setting our list to be ItemSource for ListView in MainPage.xaml
             navigationDrawerList.ItemsSource = menuList;
             // Initial navigation, this can be used for our home page

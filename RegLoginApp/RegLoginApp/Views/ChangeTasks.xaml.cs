@@ -55,7 +55,14 @@ namespace RegLoginApp.Views
 
         async void OnTapDoThis(object sender, EventArgs e)
         {
+            TextCell lblClicked = (TextCell)sender;
+            string txt = lblClicked.Text;
+
+            var updateTask = new UpdateTask();
+            updateTask.BindingContext =txt.ToString();
+            await Navigation.PushAsync(updateTask);
             await DisplayAlert("Message", "You tapped me!", "Ok");
+            //await Navigation.PushAsync(new UpdateTask());
         }
     }
 }

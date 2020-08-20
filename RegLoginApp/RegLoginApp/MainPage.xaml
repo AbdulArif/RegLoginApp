@@ -20,7 +20,7 @@
                     
                     <StackLayout Grid.Row="0">
                         <Entry Placeholder="User Name" FontSize="16"
-                               x:Name="EntryUserName"/>
+                               x:Name="EntryUserName" MaxLength="15"/>
                     </StackLayout>
                     <StackLayout Grid.Row="1">
                         <Entry Placeholder="Password" IsPassword="True"  FontSize="16"

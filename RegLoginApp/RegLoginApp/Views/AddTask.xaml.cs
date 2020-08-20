@@ -8,11 +8,11 @@ using Xamarin.Forms.Xaml;
 namespace RegLoginApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePage : ContentPage
+    public partial class AddTask : ContentPage
     {
         private SQLiteConnection conn;
         MyTask myTask;
-        public HomePage()
+        public AddTask()
         {
             InitializeComponent();
             conn = DependencyService.Get<ISQLite>().GetSQLiteConnection();
@@ -44,8 +44,9 @@ namespace RegLoginApp.Views
         private void ShowButton_Clicked(object sender, EventArgs e)
         {
 
-            var data = (from tsk in conn.Table<MyTask>() select tsk.MyTaskName);
+            var data = (from tsk in conn.Table<MyTask>() select tsk);
             dataList.ItemsSource = data;
+
         }
 
         //async void NextPage_Clicked(object sender, EventArgs e)

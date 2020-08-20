@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="RegLoginApp.Views.HomePage">
+             x:Class="RegLoginApp.Views.AddTask">
     <ContentPage.Content>
         <StackLayout>
             <Entry x:Name="Name" Placeholder="Enter Task Name" MaxLength="5"/>
