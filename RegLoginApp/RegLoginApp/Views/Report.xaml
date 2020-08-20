@@ -11,7 +11,9 @@
     <ContentPage.Content>
 
         <StackLayout>
-
+            <Picker x:Name="NamePicker" Title="Select Name"
+                    TitleColor="DarkBlue"
+            SelectedIndexChanged="Picker_OnSelectedIndexChanged"/>
             <Frame BackgroundColor="Salmon">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -25,10 +27,10 @@
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
 
-                    <Label Grid.Row="0" Grid.Column="0">User</Label>
-                    <Label Grid.Row="0" Grid.Column="1">Date</Label>
-                    <Label Grid.Row="0" Grid.Column="2">TaskName</Label>
-                    <Label Grid.Row="0" Grid.Column="3">Count</Label>
+                    <Label Grid.Row="0" Grid.Column="0" FontAttributes="Bold">User</Label>
+                    <Label Grid.Row="0" Grid.Column="1" FontAttributes="Bold">Date</Label>
+                    <Label Grid.Row="0" Grid.Column="2" FontAttributes="Bold">TaskName</Label>
+                    <Label Grid.Row="0" Grid.Column="3" FontAttributes="Bold">Count</Label>
                 </Grid>
             </Frame>
 
@@ -66,14 +68,14 @@
                                         <Label  Grid.Column="3" Text="{Binding DaysInWeek}" TextColor="Black"></Label>
                                     -->
 
-                                    <Label  Grid.Column="0" Text="{Binding Name}" TextColor="Red" FontSize="20" FontAttributes="Bold"></Label>
+                                    <Label  Grid.Column="0" Text="{Binding aName}" TextColor="Red" FontSize="20" FontAttributes="Bold"></Label>
 
                                     <!--Label  Grid.Column="1" Text="{Binding realDate}" TextColor="Black"></Label> Use this when realDate is string-->
 
-                                    <Label  Grid.Column="1" Text="{Binding realDate, StringFormat='{0:MMMM dd, yyyy}'}" TextColor="Black"></Label>
+                                    <Label  Grid.Column="1" Text="{Binding realDate}" TextColor="Black"></Label>
 
-                                    <Label  Grid.Column="2" Text="{Binding TaskName}" TextColor="Black"></Label>
-                                    <Label  Grid.Column="3" Text="{Binding Count}" TextColor="Black"></Label>
+                                    <Label  Grid.Column="2" Text="{Binding aTaskName}" TextColor="Black"></Label>
+                                    <Label  Grid.Column="3" Text="{Binding aCount}" TextColor="Black"></Label>
 
                                 </Grid>
 

@@ -35,21 +35,21 @@ namespace RegLoginApp.Views
             var page1 = new MasterPageItems() { Title = "Detail Report", Icon = "ic_action_chrome_reader_mode.png", TargetType = typeof(Report) };
             var page2 = new MasterPageItems() { Title = "Summary Report", Icon = "ic_action_chrome_reader_mode.png", TargetType = typeof(SummaryReport) };
             var page3 = new MasterPageItems() { Title = "Enter Data", Icon = "ic_action_dvr.png", TargetType = typeof(EnterData) };
-            var page4 = new MasterPageItems() { Title = "Log IN", Icon = "ic_action_dvr.png", TargetType = typeof(LoginPage) };
-            var page5 = new MasterPageItems() { Title = "Sign Up", Icon = "ic_action_dvr.png", TargetType = typeof(MainPage) };
+            //var page4 = new MasterPageItems() { Title = "Log IN", Icon = "ic_action_dvr.png", TargetType = typeof(LoginPage) };
+            //var page5 = new MasterPageItems() { Title = "Sign Up", Icon = "ic_action_dvr.png", TargetType = typeof(MainPage) };
 
             // Adding menu items to menuList
             menuList.Add(page1);
             menuList.Add(page2);
             menuList.Add(page3);
-            menuList.Add(page4);
-            menuList.Add(page5);
+            //menuList.Add(page4);
+            //menuList.Add(page5);
 
 
             // Setting our list to be ItemSource for ListView in MainPage.xaml
             navigationDrawerList.ItemsSource = menuList;
             // Initial navigation, this can be used for our home page
-            Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(SummaryReport)));
+            Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(Report)));
             this.BindingContext = new
             {
                 Header = "",
