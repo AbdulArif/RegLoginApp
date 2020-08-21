@@ -76,7 +76,7 @@
 
                                     <Label  Grid.Column="2" Text="{Binding aTaskName}" TextColor="Black"></Label>
                                     <Label  Grid.Column="3" Text="{Binding aCount}" TextColor="Black"></Label>
-
+                                    
                                 </Grid>
 
                             </ViewCell>

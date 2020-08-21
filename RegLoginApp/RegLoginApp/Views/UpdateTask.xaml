@@ -5,18 +5,21 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="RegLoginApp.Views.UpdateTask">
- 
+
     <ContentPage.Content>
         <StackLayout>
             <TableView>
                 <TableRoot>
                     <TableSection>
-                        <EntryCell Label="TASK NAMES" Completed="Update_TaskName" Text="{Binding MyTaskName}"/>
+                        <EntryCell  x:Name ="TaskName" Label="Task Name" Completed="Update_TaskName"/>
                     </TableSection>
-                </TableRoot>   
+                    <TableSection>
+                        <ViewCell>
+                            <Button Text="Delete" x:Name="Delete" Clicked="Delete_TaskName"/>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
             </TableView>
-            <Button Text="Save" x:Name="Update" Clicked="Update_TaskName"/>
-            <Button Text="Delete" x:Name="Delete" Clicked="Delete_TaskName"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

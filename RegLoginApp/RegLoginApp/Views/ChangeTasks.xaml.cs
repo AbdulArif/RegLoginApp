@@ -58,10 +58,12 @@ namespace RegLoginApp.Views
             TextCell lblClicked = (TextCell)sender;
             string txt = lblClicked.Text;
 
-            var updateTask = new UpdateTask();
-            updateTask.BindingContext =txt.ToString();
+            var updateTask = new UpdateTask(txt);
+            //updateTask.BindingContext =txt.ToString();
+
             await Navigation.PushAsync(updateTask);
-            await DisplayAlert("Message", "You tapped me!", "Ok");
+
+            //await DisplayAlert("Message", "You tapped me!", "Ok");
             //await Navigation.PushAsync(new UpdateTask());
         }
     }
