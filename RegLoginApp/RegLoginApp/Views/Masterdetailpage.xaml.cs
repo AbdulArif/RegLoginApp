@@ -54,7 +54,7 @@ namespace RegLoginApp.Views
             // Setting our list to be ItemSource for ListView in MainPage.xaml
             navigationDrawerList.ItemsSource = menuList;
             // Initial navigation, this can be used for our home page
-            Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(Report)));
+            Detail = new NavigationPage((Page)Activator.CreateInstance(typeof(ChangeCounts)));
             this.BindingContext = new
             {
                 Header = "",

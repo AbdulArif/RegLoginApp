@@ -68,8 +68,8 @@ namespace RegLoginApp.Views
             var detData = from cou2 in conn.Table<Counts>() select cou2;
             var fltList = from ag in detData where ag.ID.Equals(myId) select ag; //filtered List
 
-            await DisplayAlert("Message", "You tapped me on " + myId + " !", "Ok");
-            //await Navigation.PushAsync(new UpdateCounts());
+            //await DisplayAlert("Message", "You tapped me on " + myId + " !", "Ok");
+            await Navigation.PushAsync(new UpdateCounts(myId));
         }
     }
 }

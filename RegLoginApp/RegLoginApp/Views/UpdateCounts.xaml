@@ -6,10 +6,23 @@
              mc:Ignorable="d"
              x:Class="RegLoginApp.Views.UpdateCounts">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout  Orientation="Vertical" Spacing="30" VerticalOptions="Center" >
+            <TableView>
+                <TableRoot>
+                    <TableSection>
+                        <EntryCell x:Name="Id" Label="ID"/>
+                        <EntryCell x:Name ="Name" Label="Name"/>
+                        <EntryCell x:Name ="Date" Label="Date"/>
+                        <EntryCell x:Name="TaskName" Label="Task Name"/>
+                        <EntryCell x:Name ="Count" Label="Count"/>
+                    </TableSection>
+                    <TableSection>
+                        <ViewCell>
+                            <Button Text="Save" x:Name="Update" Clicked="Update_Clicked"/>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
