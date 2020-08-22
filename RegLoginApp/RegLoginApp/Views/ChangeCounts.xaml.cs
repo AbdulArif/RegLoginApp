@@ -40,12 +40,13 @@ namespace RegLoginApp.Views
             if ((string)selItem == "Show All")
             {
                 //Following two lines work!
-                var subStrDate = detData.Select(w => new { w.ID, w.Name, realDate = w.Date.Substring(0, w.Date.IndexOf(" ")).Trim(), w.TaskName, w.Count });
+                var subStrDate = detData.Select(w => new { w.ID, w.Name, realDate = w.Date, w.TaskName, w.Count });
                 ListCountData.ItemsSource = subStrDate;  //realDate is string a string, meaning, StringFormat will not work in XAML
             }
             else
             {
-                var fltStrDate = fltList.Select(f => new { f.ID, f.Name, realDate = f.Date.Substring(0, f.Date.IndexOf(" ")).Trim(), f.TaskName, f.Count });
+                //var fltStrDate = fltList.Select(f => new { f.ID, f.Name, realDate = f.Date.Substring(0, f.Date.IndexOf(" ")).Trim(), f.TaskName, f.Count });
+                var fltStrDate = fltList.Select(f => new { f.ID, f.Name, realDate = f.Date, f.TaskName, f.Count });
                 ListCountData.ItemsSource = fltStrDate;
             }
         }

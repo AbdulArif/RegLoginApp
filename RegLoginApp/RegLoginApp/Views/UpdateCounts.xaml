@@ -6,19 +6,53 @@
              mc:Ignorable="d"
              x:Class="RegLoginApp.Views.UpdateCounts">
     <ContentPage.Content>
-        <StackLayout  Orientation="Vertical" Spacing="30" VerticalOptions="Center" >
+        <StackLayout  Orientation="Vertical" Spacing="30" VerticalOptions="Center">
             <TableView>
                 <TableRoot>
                     <TableSection>
-                        <EntryCell x:Name="Id" Label="ID"/>
+                        <!-- <EntryCell x:Name="Id" Label="ID"/>
                         <EntryCell x:Name ="Name" Label="Name"/>
                         <EntryCell x:Name ="Date" Label="Date"/>
                         <EntryCell x:Name="TaskName" Label="Task Name"/>
-                        <EntryCell x:Name ="Count" Label="Count"/>
+                        <EntryCell x:Name ="Count" Label="Count"/>  -->
+
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="13,0">
+                                <Label Text="Id: " FontSize="15" VerticalOptions="Center" />
+                                <Label x:Name="Id" FontSize="20" FontAttributes="Bold" VerticalOptions="Center"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="13,0">
+                                <Label Text="Name: " FontSize="15" VerticalOptions="Center" />
+                                <Label x:Name="Name" FontSize="20" FontAttributes="Bold" VerticalOptions="Center"/>
+                            </StackLayout>
+                        </ViewCell>
+
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="13,0">
+                                <Label Text="Date: " FontSize="20" VerticalOptions="Center" />
+                                <DatePicker x:Name="DatePicker" />
+                            </StackLayout>
+                        </ViewCell>
+
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="13,0">
+                                <Label Text="Task: " FontSize="15" VerticalOptions="Center"  />
+                                <Picker x:Name="TaskName"  Title="Select Task" TitleColor="SeaGreen"/>
+                            </StackLayout>
+                        </ViewCell>
+
+                        <EntryCell x:Name ="Count" Label="Count"  Keyboard="Numeric"
+                                   PropertyChanged="Count_Completed" Completed="Count_Completed"/>
+
                     </TableSection>
                     <TableSection>
                         <ViewCell>
-                            <Button Text="Save" x:Name="Update" Clicked="Update_Clicked"/>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                <Button Text="Update" x:Name="Update" Clicked="Update_Counts"/>
+                                <Button Text="Delete" x:Name="Delete" Clicked="Delete_Counts"/>
+                            </StackLayout>
                         </ViewCell>
                     </TableSection>
                 </TableRoot>

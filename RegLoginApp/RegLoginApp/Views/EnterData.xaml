@@ -12,7 +12,7 @@
                     <Binding Path="Name"/>
                 </Picker.ItemDisplayBinding>-->
             </Picker>
-            <DatePicker x:Name="DatePicker" MinimumDate="01/01/1972" MaximumDate="08/19/2020"/>
+            <DatePicker x:Name="DatePicker" MinimumDate="01/01/2020" MaximumDate="01/31/2022"/>
             <Picker x:Name="TaskPicker" Title="Select Task" TitleColor="SeaGreen"/>
             <Entry x:Name="EntryCount" Placeholder="Count" Keyboard="Numeric"/>
 

@@ -55,6 +55,8 @@ namespace RegLoginApp.Views
 
             await DisplayAlert("Message", "Task name successfully updated. All related data also updated.", "Ok");
             await Navigation.PushAsync(new ChangeTasks());
+            //await Navigation.PopAsync();
+
         }
 
         async void Delete_TaskName(object sender, EventArgs e)
